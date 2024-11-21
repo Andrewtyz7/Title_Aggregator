@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latest Articles</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Latest Articles</h1>
+    <div>
+        {% for headline in headlines %}
+            <div class="headline">
+                <a href="{{ headline.link }}" target="_blank">{{ headline.title }}</a>
+            </div>
+        {% else %}
+            <p>No articles found. Please check back later.</p>
+        {% endfor %}
+    </div>
+</body>
+</html>
+
+
